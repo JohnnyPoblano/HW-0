@@ -5,6 +5,7 @@
 */
 
 import java.util.Scanner;
+
 public class Driver {
 
 	/**
@@ -43,9 +44,11 @@ public class Driver {
 		double mirp1 = mir + 1;
 
 		// Perform a loop to compound the interest
-		System.out.println("                Deposit     12    1.0025  1.030416  515.2080");
+		System.out.println("\n                                Months Interest                                      Times");
+		System.out.println("Month #            Deposit         Accrued        1 + mir      (1 + mir) ^MIA        Deposit");
+		System.out.println("---------------------------------------------------------------------------------------------");
 		for (int month = 1, monthIntAccrued = numMonth; month <= numMonth; month++, monthIntAccrued--) {
-			System.out.printf("Month %-3d%10d%10d%10.4f%10.6f%10.4f", month, perDeposit, monthIntAccrued, mirp1, Math.pow(mirp1, monthIntAccrued), Math.pow(mirp1, monthIntAccrued) * perDeposit);
+			System.out.printf("Month %-3d%15d%15d%18.4f%18.6f%18.4f", month, perDeposit, monthIntAccrued, mirp1, Math.pow(mirp1, monthIntAccrued), Math.pow(mirp1, monthIntAccrued) * perDeposit);
 			System.out.println();
 			depositSum += Math.pow(mirp1, monthIntAccrued) * perDeposit;
 		}
